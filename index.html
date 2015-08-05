@@ -69,6 +69,8 @@
       "config-optimize-autoloader": "Always optimize when dumping the autoloader.",
       "config-prepend-autoloader": "If false, the composer autoloader will not be prepended to existing autoloaders, defaults to true.",
       "config-github-domains": "A list of domains to use in github mode. This is used for GitHub Enterprise setups, defaults to [\"github.com\"].",
+      "config-archive-format": "[\"Defaults to tar\"]. Composer allows you to add a default archive format when the workflow needs to create a dedicated archiving format.",
+      "config-archive-dir": "Defaults to [\".\"]. Composer allows you to add a default archive directory when the workflow needs to create a dedicated archiving format. Or for easier development between modules.",
       "scripts": "Composer allows you to hook into various parts of the installation process through the use of scripts.<br />A script is a callback (defined as a static method) or a shell command that will be called when the event it listens on is triggered.<br/> Let's take a look to the full list of <a href=\"http://getcomposer.org/doc/articles/scripts.md#event-types\">Event Types</a>.",
       "extra": "Arbitrary extra data for consumption by <code>scripts</code>.<br />This can be virtually anything. To access it from within a script event handler, you can do:<br /><pre><code>$extra = $event-&gt;getComposer()-&gt;getPackage()-&gt;getExtra();</code></pre>",
       "bin": "A set of files that should be treated as binaries and symlinked into the <code>bin-dir</code> (from config).",
@@ -369,7 +371,9 @@
         <span class="pair"><span class="key" data-prefix="config-">"cache-files-ttl"</span>: 15552000,</span>
         <span class="pair"><span class="key" data-prefix="config-">"cache-files-maxsize"</span>: "300MiB",</span>
         <span class="pair"><span class="key" data-prefix="config-">"notify-on-install"</span>: true,</span>
-        <span class="pair"><span class="key" data-prefix="config-">"discard-changes"</span>: false</span>
+        <span class="pair"><span class="key" data-prefix="config-">"discard-changes"</span>: false,</span>
+        <span class="pair"><span class="key" data-prefix="config-">"archive-format"</span>: "tar",</span>
+        <span class="pair"><span class="key" data-prefix="config-">"archive-dir"</span>: "."</span>
     },
     <span class="pair"><span class="key">"archive"</span>: <span class="value">{
         "exclude": ["/foo/bar", "baz", "/*.test", "!/foo/bar/baz"]
